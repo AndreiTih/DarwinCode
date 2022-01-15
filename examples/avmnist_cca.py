@@ -5,9 +5,8 @@ import torch
 
 sys.path.append(os.getcwd())
 
-from unimodals.common_models import LeNet, MLP, Constant
+from unimodals.common_models import LeNet, Linear
 from utils.helper_modules import Sequential2
-from unimodals.common_models import MLP, VGG16, Linear, MaxOut_MLP
 from fusions.common_fusions import Concat
 from training_structures.Supervised_Learning import train, test
 from datasets.avmnist.get_data import get_dataloader
