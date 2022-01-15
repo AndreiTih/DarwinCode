@@ -4,6 +4,18 @@ from torch.nn import functional as F
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 
 
+class GlobalPooling2D(nn.Module):
+    def __init__(self):
+        super(GlobalPooling2D, self).__init__()
+
+    def forward(self, x):
+        # apply global average pooling
+        x = x.view(x.size(0), x.size(1), -1)
+        x = torch.mean(x, 2)
+        x = x.view(x.size(0), -1)
+
+        return x
+
 class Linear(torch.nn.Module):
     """
     Linear Layer with Xavier Initialization, and 0 Bias.
