@@ -1,3 +1,4 @@
+*.pt
 datasets/__pycache__
 eval_scripts/__pycache__
 examples/__pycache__
